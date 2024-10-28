@@ -1,0 +1,223 @@
+<html>
+  <head>
+    <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #e5e5e5;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .header h1 {
+        color: #f5c32c;
+        font-size: 24px;
+        margin: 0;
+        transition: text-shadow 0.3s ease; /* Hapus transform di sini */
+      }
+
+      /* Hover effects for h1 */
+      .header h1:hover {
+        text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c; /* Glowing effect */
+        /* transform: translateY(-5px); */ /* Hapus efek ini */
+      }
+
+      .header nav a {
+        color: #e5e5e5;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        position: relative; /* Needed for the glow effect */
+        transition: color 0.3s ease; /* Smooth color transition */
+      }
+      .header nav a.active {
+        color: #f5c32c; /* Active link color */
+      }
+
+      /* Hover effects for nav links */
+      .header nav a:hover {
+        color: #f5c32c; /* Change text color on hover */
+        text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c; /* Glowing effect */
+        /* transform: translateY(-5px); */ /* Hapus efek ini */
+      }
+
+      .header .github-icon {
+        font-size: 24px;
+        color: #e5e5e5;
+      }
+      .main-title {
+        text-align: center;
+        margin: 40px 0;
+      }
+      .main-title h2 {
+        font-size: 32px;
+        margin: 0;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+      }
+      .main-title p {
+        color: #f5c32c;
+        font-size: 18px;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      /* Hover effects for h2 and p */
+      .main-title h2:hover,
+      .main-title p:hover {
+        text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c;
+        transform: translateY(-5px);
+      }
+      .main-title h2:hover {
+        animation: glow 1.5s infinite alternate;
+      }
+      .main-title p:hover {
+        animation: glow 1.5s infinite alternate;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c, 0 0 15px #f5c32c;
+        }
+        100% {
+          text-shadow: 0 0 10px #f5c32c, 0 0 20px #f5c32c, 0 0 30px #f5c32c;
+        }
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .project-card {
+        background-color: #2a2a2a;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+      .project-card h3 {
+        font-size: 20px;
+        margin: 15px 0 10px;
+      }
+      .project-card p {
+        font-size: 16px;
+        margin: 0 0 10px;
+      }
+      .project-card .tech-stack {
+        color: #f5c32c;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .project-card .icons {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .project-card .icons i {
+        color: #e5e5e5;
+        margin-left: 10px;
+        font-size: 18px;
+      }
+      /* Hover effects for project card */
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+      .project-card:hover img {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>BagasRamadan();</h1>
+        <nav>
+          <a href="Home.html"> Home </a>
+          <a href="About.html"> About </a>
+          <a class="active" href="Portofolio.html"> Portfolio </a>
+          <a href="Contact.html"> Contact </a>
+          <a href="Sertifikat.html">Certification</a>
+        </nav>
+      </div>
+      <div class="main-title">
+        <h2>Past Project Experience</h2>
+        <p>Explore the projects I've worked on so far</p>
+      </div>
+      <div class="projects">
+        <div class="project-card">
+          <img alt="#" height="200" src="image/foto2.jpg" width="300" />
+          <h3>Personal Website</h3>
+          <p>My personal website, I created this website to display my profile, skills and projects. As well as my place to try new technology.</p>
+          <p class="tech-stack">Vue.JS 3, Tailwind</p>
+          <div class="icons">
+            <i class="fas fa-link"> </i>
+            <i class="fas fa-code"> </i>
+          </div>
+        </div>
+        <div class="project-card">
+          <img alt="#" height="200" src="image/foto3.jpg." width="300" />
+          <h3>Final Project</h3>
+          <p>Creating a program with the title Design and construction of a web-based library information system for Dismp Nurul Anwar, Bekasi City using the PHP programming language.</p>
+          <p class="tech-stack">Vue.JS 3, Tailwind</p>
+          <div class="icons">
+            <i class="fas fa-link"> </i>
+            <i class="fas fa-code"> </i>
+          </div>
+        </div>
+        <div class="project-card">
+          <img alt="#" height="200" src="image/foto4.jpg" width="300" />
+          <h3>Becoming the Chair of the UKM LCC (LP3I COMPUTER CLUB)</h3>
+          <p>with the title Build Self Awareness from Cyber ​​Crimes, attended by 180 LP3I students for Jabodetabek</p>
+          <p class="tech-stack">Laravel 9, Bootstrap</p>
+          <div class="icons">
+            <i class="fas fa-link"> </i>
+            <i class="fas fa-code"> </i>
+          </div>
+        </div>
+        <div class="project-card">
+          <img alt="#" height="200" src="image/foto5.jpg" width="300" />
+          <h3>Online shop prototype design</h3>
+          <p>got an assignment to create my own online shop design using Figma</p>
+          <p class="tech-stack">Laravel 9, Bootstrap</p>
+          <div class="icons">
+            <i class="fas fa-link"> </i>
+            <i class="fas fa-code"> </i>
+          </div>
+        </div>
+        <div class="project-card">
+          <img alt="#" height="200" src="image/foto6.jpg" width="300" />
+          <h3>Instagram Post Content Design (Internship)</h3>
+          <p>Creating post designs with the theme of big days for Pusdiklat Instagram posts</p>
+          <p class="tech-stack">Laravel 9, Bootstrap</p>
+          <div class="icons">
+            <i class="fas fa-link"> </i>
+            <i class="fas fa-code"> </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

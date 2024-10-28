@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #e5e5e5;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .header h1 {
+        color: #f5c32c;
+        font-size: 24px;
+        margin: 0;
+        transition: text-shadow 0.3s ease;
+      }
+      /* Hover effects for h1 */
+      .header h1:hover {
+        text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c; /* Glowing effect */
+      }
+      .header nav a {
+        color: #e5e5e5;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .header nav a.active {
+        color: #f5c32c; /* Active link color */
+      }
+      /* Hover effects for nav links */
+      .header nav a:hover {
+        color: #f5c32c; /* Change text color on hover */
+        text-shadow: 0 0 5px #f5c32c, 0 0 10px #f5c32c; /* Glowing effect */
+      }
+      .main-title {
+        text-align: center;
+        margin: 40px 0;
+      }
+      .main-title h2 {
+        font-size: 32px;
+        margin: 0;
+        color: #f5c32c;
+        transition: text-shadow 0.3s ease; /* For glow effect */
+      }
+      .main-title p {
+        color: #f5c32c;
+        font-size: 18px;
+        transition: text-shadow 0.3s ease; /* For glow effect */
+      }
+      /* Hover effects for main title */
+      .main-title h2:hover,
+      .main-title p:hover {
+        text-shadow: 0 0 10px #f5c32c, 0 0 20px #f5c32c; /* Glowing effect */
+      }
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .project-card {
+        background-color: #2a2a2a;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+      .project-card h3 {
+        font-size: 20px;
+        margin: 15px 0 10px;
+      }
+      .project-card p {
+        font-size: 16px;
+        margin: 0 0 10px;
+      }
+      /* Hover effects for project card */
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>BagasRamadan();</h1>
+        <nav>
+          <a href="Home.html"> Home </a>
+          <a href="About.html"> About </a>
+          <a href="Portofolio.html"> Portfolio </a>
+          <a href="Contact.html"> Contact </a>
+          <a class="active" href="Sertifikat.html"> Certification </a>
+        </nav>
+      </div>
+      <div class="main-title">
+        <h2>Certification</h2>
+        <p>I received the following certificates:</p>
+      </div>
+      <div class="projects">
+        <div class="project-card">
+          <img alt="Sertifikat Database Administrator" src="image2/1.jpg" />
+          <h3>Certification Database Administrator</h3>
+        </div>
+        <div class="project-card">
+          <img alt="Sertifikat Junior Web Programming" src="image2/2.jpg" />
+          <h3>Certification Junior Web Programming</h3>
+        </div>
+        <div class="project-card">
+          <img alt="Sertifikat Web Development" src="image2/3.jpg" />
+          <h3>Certification Operator Computer</h3>
+        </div>
+        <div class="project-card">
+          <img alt="Sertifikat Digital Marketing" src="image2/4.jpg" />
+          <h3>Certification Toiec</h3>
+        </div>
+        <div class="project-card">
+          <img alt="Sertifikat Internship" src="image2/5.png" />
+          <h3>Certification webinar chairman with the theme Build Self Awareness from Cyber Crime</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

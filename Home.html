@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bagas Ramadan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0d0d0d;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+      .container {
+        text-align: left;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px 50px;
+        position: absolute;
+        top: 0;
+      }
+
+      .header .logo,
+      .header .nav a,
+      .content .text h1,
+      .content .text h2,
+      .content .text p {
+        transition: text-shadow 0.5s ease, color 0.5s ease, transform 0.5s ease;
+      }
+
+      .header .logo:hover,
+      .header .nav a:hover,
+      .content .text h1:hover,
+      .content .text h2:hover,
+      .content .text p:hover {
+        text-shadow: 0 0 10px #f5c32c, 0 0 20px #f5c32c, 0 0 30px #f5c32c;
+        color: #fff;
+        transform: translateY(-5px);
+      }
+
+      .header h1 {
+        font-size: 24px;
+        color: #f1c40f;
+        transition: color 0.3s ease;
+        margin: 0 20px;
+      }
+
+      .header h1:hover {
+        color: #f5c32c;
+        text-shadow: 0 0 10px #f5c32c;
+      }
+
+      .header nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        position: relative;
+        transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      .header nav a:hover {
+        color: #f1c40f;
+        text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f;
+        transform: translateY(-5px);
+      }
+
+      .header nav a.active {
+        color: #f1c40f;
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      .content .text {
+        max-width: 400px;
+      }
+      .content .text h1,
+      .content .text h2,
+      .content .text p {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .content .text h1 {
+        font-size: 48px;
+        margin: 10px 0;
+      }
+      .content .text h2 {
+        font-size: 24px;
+        color: #f5c32c;
+        margin: 10px 0;
+      }
+      .content .text p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      .content .image {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #f5c32c;
+        box-shadow: 0 0 20px #f5c32c;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+      .content .image:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(245, 195, 44, 1), 0 0 80px rgba(245, 195, 44, 0.5);
+      }
+      .content .image img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Media Query untuk tampilan yang lebih kecil (Mobile) */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          padding: 10px 20px;
+        }
+
+        .header h1 {
+          margin-bottom: 10px;
+        }
+
+        .content {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .content .text h1 {
+          font-size: 36px;
+        }
+
+        .content .text h2 {
+          font-size: 20px;
+        }
+
+        .content .text p {
+          font-size: 16px;
+        }
+
+        .content .image img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .content .image {
+          margin-top: 20px;
+        }
+      }
+
+      /* Media Query untuk tampilan ultra-kecil (smartphone berukuran sangat kecil) */
+      @media (max-width: 480px) {
+        .content .text h1 {
+          font-size: 28px;
+        }
+
+        .content .text h2 {
+          font-size: 18px;
+        }
+
+        .content .text p {
+          font-size: 14px;
+        }
+
+        .content .image img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>BagasRamadan();</h1>
+      <nav>
+        <a class="active" href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Portofolio.html">Portfolio</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Sertifikat.html">Certification</a>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="content">
+        <div class="text">
+          <h1>Bagas Ramadan</h1>
+          <h2 id="typing-effect"></h2>
+          <p>Welcome to my personal website. 👋</p>
+        </div>
+        <div class="image">
+          <img id="profile-pic" alt="#" src="image/foto.jpg" width="200" height="200" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Efek ketik untuk bagian teks
+      const typingElement = document.getElementById("typing-effect");
+      const text = "Web Developer";
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          typingElement.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, 100); // Delay 100ms antar karakter
+        }
+      }
+
+      window.onload = function () {
+        setTimeout(type, 1000); // Mulai efek ketik setelah 1 detik
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffdd33;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffdd33, 0 0 50px #ffdd33;
+        }
+        100% {
+          text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffdd33;
+        }
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #000;
+      }
+
+      .navbar .logo {
+        font-size: 24px;
+        color: #ffd700;
+        font-weight: bold; /* Bold added here */
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar .logo:hover {
+        animation: glow 1.5s infinite ease-in-out;
+      }
+
+      .navbar .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar .nav-links a:hover {
+        color: #ffd700;
+        animation: glow 1.5s infinite ease-in-out;
+      }
+
+      .navbar .nav-links a.active {
+        color: #ffd700;
+      }
+
+      .navbar .github-icon {
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .contact-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .contact-form {
+        background-color: #333;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 400px;
+      }
+
+      .contact-form h2 {
+        text-align: center;
+        color: #ffd700;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .contact-form h2:hover {
+        animation: glow 1.5s infinite ease-in-out;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #ffd700;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .contact-form label:hover {
+        animation: glow 1.5s infinite ease-in-out;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ffd700;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #000000;
+      }
+
+      .contact-form input:hover,
+      .contact-form textarea:hover {
+        animation: glow 1.5s infinite ease-in-out;
+      }
+
+      .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffd700;
+        color: #000;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #ffc107;
+      }
+
+      /* Notifikasi */
+      .notification {
+        display: none; /* Sembunyikan notifikasi secara default */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #ffd700;
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        transition: opacity 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo"><b>BagasRamadan();</b></div>
+      <!-- Bold applied to text -->
+      <div class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Portofolio.html">Portfolio</a>
+        <a href="Contact.html" class="active">Contact</a>
+        <a href="Sertifikat.html">Certification</a>
+      </div>
+    </div>
+    <div class="contact-form-container">
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <h2>Contact Me</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email..." required />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Notifikasi -->
+    <div class="notification" id="notification">Your message has been sent!</div>
+
+    <script>
+      function sendMessage(event) {
+        event.preventDefault(); // Mencegah pengiriman form yang normal
+        const notification = document.getElementById("notification");
+        notification.style.display = "block"; // Tampilkan notifikasi
+        notification.style.opacity = "1"; // Set opacity menjadi 1
+
+        // Sembunyikan notifikasi setelah 3 detik
+        setTimeout(() => {
+          notification.style.opacity = "0"; // Set opacity menjadi 0
+          setTimeout(() => {
+            notification.style.display = "none"; // Sembunyikan notifikasi
+          }, 500); // Tunggu 0.5 detik sebelum menyembunyikan
+        }, 3000); // Tampilkan notifikasi selama 3 detik
+      }
+    </script>
+  </body>
+</html>

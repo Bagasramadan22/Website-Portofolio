@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .header h1 {
+        font-size: 24px;
+        color: #f1c40f;
+        transition: color 0.3s ease;
+      }
+
+      .header h1:hover {
+        color: #f5c32c;
+        text-shadow: 0 0 10px #f5c32c;
+      }
+
+      /* Style untuk navigasi */
+      .header nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        position: relative;
+        transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      /* Efek ketika di-hover */
+      .header nav a:hover {
+        color: #f1c40f;
+        text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f;
+        transform: translateY(-5px);
+      }
+
+      /* Menandai link yang aktif */
+      .header nav a.active {
+        color: #f1c40f;
+      }
+
+      .about-section {
+        background-color: #333333;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideIn 0.5s forwards;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .image {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #f5c32c;
+        box-shadow: 0 0 20px #f5c32c;
+        transition: transform 0.5s ease;
+      }
+
+      .image:hover {
+        transform: scale(1.1);
+      }
+
+      .about-section img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .about-text {
+        max-width: 600px;
+        margin-left: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideInText 0.5s forwards;
+        animation-delay: 0.4s;
+      }
+
+      @keyframes slideInText {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .about-text h2,
+      .about-text p {
+        transition: all 0.5s ease;
+      }
+
+      .about-text h2:hover,
+      .about-text p:hover {
+        color: #dcdcdc;
+        text-shadow: 0 0 5px #dcdcdc, 0 0 10px #dcdcdc;
+        transform: translateY(-3px);
+      }
+
+      .about-text p {
+        text-align: justify; /* Menambahkan text-align: justify */
+      }
+
+      .skills-section {
+        margin-top: 20px;
+      }
+
+      .skills-section h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      .skills-section h2:hover {
+        color: #f1c40f;
+        text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;
+      }
+
+      .skills-section .tabs {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .skills-section .tabs button {
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skills-section .tabs button.active {
+        background-color: #f1c40f;
+        color: #000000;
+      }
+
+      .skills-section .tabs button:hover {
+        background-color: #f1c40f;
+        color: #000000;
+        box-shadow: 0 0 10px #f1c40f;
+      }
+
+      .skills-section .skills-grid {
+        display: none;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .skills-section .skills-grid.active {
+        display: flex;
+      }
+
+      .skills-section .skills-grid .skill-card {
+        background-color: #333333;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 150px;
+        transition: transform 0.3s ease;
+      }
+
+      .skills-section .skills-grid .skill-card:hover {
+        transform: scale(1.05);
+      }
+
+      .skills-section .skills-grid .skill-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      .skills-section .skills-grid .skill-card p {
+        font-size: 16px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-text {
+          margin-left: 0;
+          margin-top: 20px; /* Space between image and text */
+        }
+
+        .skills-section .tabs {
+          flex-direction: column; /* Stack tabs vertically */
+          align-items: center; /* Center tabs */
+        }
+
+        .skills-section .tabs button {
+          margin: 5px 0; /* Space between buttons */
+        }
+
+        .skills-section .skills-grid {
+          flex-direction: column; /* Stack skill cards vertically */
+          align-items: center; /* Center skill cards */
+        }
+
+        .skills-section .skills-grid .skill-card {
+          width: 80%; /* Take full width on smaller screens */
+          margin-bottom: 10px; /* Space between cards */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>BagasRamadan();</h1>
+        <nav>
+          <a href="Home.html">Home</a>
+          <a class="active" href="About.html">About</a>
+          <a href="Portofolio.html">Portfolio</a>
+          <a href="Contact.html">Contact</a>
+          <a href="Sertifikat.html">Certification</a>
+        </nav>
+      </div>
+
+      <div class="about-section">
+        <div class="image">
+          <img src="image/foto.jpg" alt="Profile Picture" />
+        </div>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hi everyone! My name is Bagas Ramadan. I am a web developer from Jakarta, Central Jakarta. I have experience and knowledge in back-end web development. I really enjoy what I am doing right now; in my opinion, programming is not
+            just a job, but also an art that has aesthetic value.
+          </p>
+          <p>
+            My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to
+            convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <h2>Skills</h2>
+        <div class="tabs">
+          <button id="tech-stack-btn" class="active">Tech Stack</button>
+          <button id="tools-btn">Tools</button>
+        </div>
+
+        <div id="tech-stack" class="skills-grid active">
+          <div class="skill-card">
+            <img src="https://storage.googleapis.com/a1aa/image/rIVUU6eKlC1sFKwFxHq67AFMdGGMOeRl11OPPfbNF6K9YQJnA.jpg" alt="HTML5 logo" />
+            <p>HTML</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://storage.googleapis.com/a1aa/image/zuCkIiFh0VrSGRGxIH6beqeR1vYg23wKAlMozdMreQo1YQJnA.jpg" alt="CSS3 logo" />
+            <p>CSS</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://storage.googleapis.com/a1aa/image/beB1riuiml0fW0sWfJJTf9niSXcS0E028uCMyzQvyfVcjBlcC.jpg" alt="PHP logo" />
+            <p>PHP</p>
+          </div>
+        </div>
+        <div id="tools" class="skills-grid">
+          <div class="skill-card">
+            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git logo" />
+            <p>Git</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" />
+            <p>GitHub</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png" alt="MySQL logo" />
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const techStackBtn = document.getElementById("tech-stack-btn");
+        const toolsBtn = document.getElementById("tools-btn");
+        const techStack = document.getElementById("tech-stack");
+        const tools = document.getElementById("tools");
+
+        techStackBtn.addEventListener("click", function () {
+          techStack.classList.add("active");
+          tools.classList.remove("active");
+          techStackBtn.classList.add("active");
+          toolsBtn.classList.remove("active");
+        });
+
+        toolsBtn.addEventListener("click", function () {
+          tools.classList.add("active");
+          techStack.classList.remove("active");
+          toolsBtn.classList.add("active");
+          techStackBtn.classList.remove("active");
+        });
+      </script>
+    </div>
+  </body>
+</html>
